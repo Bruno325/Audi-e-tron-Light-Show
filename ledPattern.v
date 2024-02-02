@@ -26,7 +26,6 @@ module ledPattern(input sw0, sw9, clk, resetBtn, output reg [9:0] ledToDisp, out
 			
 			pattern <= 10'b0000000000;
 			
-			
 			if (sw0 && sw9) begin
 				ledToDisp = pattern;
 			end
@@ -48,7 +47,6 @@ module ledPattern(input sw0, sw9, clk, resetBtn, output reg [9:0] ledToDisp, out
 		// if start button has been pressed, begin displaying the pattern
 		else if (enable) begin
 		
-				
 			if (count > 43) begin
 				count <= 0;
 				tempRepCount <= tempRepCount - 1;
@@ -162,9 +160,7 @@ module ledPattern(input sw0, sw9, clk, resetBtn, output reg [9:0] ledToDisp, out
 				ledToDisp = pattern & 10'b0000000000;
 			end
 			
-			
 			countOut <= count;	
-					
 					
 			end
 		
@@ -182,7 +178,6 @@ module ledPattern(input sw0, sw9, clk, resetBtn, output reg [9:0] ledToDisp, out
 				else begin
 					ledToDisp = pattern & 10'b0000000000;
 				end
-				
 				
 				countOut <= count;
 			
