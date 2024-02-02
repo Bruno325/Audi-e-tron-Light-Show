@@ -145,7 +145,6 @@ dec_to_display(repCount, segToDisp);
 
 // choose what clock to use depending on state of State Machine
 always @(*) begin
-
 	if (state == 2'b00) begin
 		tempClk <= clk2Sec;
 	end
@@ -155,21 +154,17 @@ always @(*) begin
 	else begin
 		tempClk <= clk1Sec;
 	end
-
-
 end
 
 
 // warn the program when we have finished to lock board from displaying further patterns
 always @(*) begin
-
 	if (state == 2'b10) begin
 		isFinished <= 1;
 	end
 	else begin
 		isFinished <= 0;
 	end
-
 end
 
 // LED and HEX display assignments
