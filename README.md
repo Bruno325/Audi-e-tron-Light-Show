@@ -1,6 +1,6 @@
 # Audi-e-tron-Light-Show
 
-This program recreates one of the many patterns from an Audi RS e-tron GT Light Show found in the following video:
+This program uses a DE-10 Lite Board and Intel Quartus to recreate one of the many patterns from an Audi RS e-tron GT Light Show found in the following video:
 https://youtu.be/MrGVitqTwYY?si=_e0gOrLxOP4Ylu1Q&t=11
 
 How the Program Works:
