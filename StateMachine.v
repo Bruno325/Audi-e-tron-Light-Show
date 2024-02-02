@@ -15,7 +15,6 @@ module StateMachine(input clk, input [5:0] count, input wire reset, startBtn, in
 	
 	// resets internal, local state and warns program we have pressed the button (resetPressed <= 1)
 	always @ (posedge clk or negedge reset) begin
-	
 		if (~reset) begin
 			currentState <= delay2;
 			resetPressed <= 1;
@@ -23,47 +22,32 @@ module StateMachine(input clk, input [5:0] count, input wire reset, startBtn, in
 		else begin
 			currentState <= nextState;
 		end
-	
 	end
 
 	// resets program's state
 	always @ (posedge clk or negedge reset) begin
-	
 		if (~reset) begin
 			state <= delay2;
 		end
 		else begin
 			state <= currentState;
 		end
-	
 	end
 	
 	// warns program if we have pressed the start button
 	always @(negedge startBtn) begin
-	
 		if (~startBtn) begin
 			enable <= 1;	
 		end
-	
 	end
 
 	// handle state transitions
 	always @(*) begin
-	
 		nextState <= currentState;
-		
 		case (currentState)
-		
 			delay2: if (enable) nextState <= delayPoint1;
-
-			delayPoint1: if (enable && repCount == 0) nextState <= delay1;
-			
+			delayPoint1: if (enable && repCount == 0) nextState <= delay1
 			delay1: nextState <= delay1;
-			
 		endcase
-		
 	end
-
-
-
 endmodule
